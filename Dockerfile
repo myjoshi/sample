@@ -1,4 +1,4 @@
-FROM maven:3.3-jdk-8
+FROM maven:3.5.4-jdk-8
 
 VOLUME /tmp
 
@@ -15,8 +15,8 @@ RUN ["mvn", "clean", "install"]
 
 RUN ["ls", "/code/target"]
 RUN ["pwd"]
-RUN ["ls", "-ltrh", "/code/target/myspringboot.jar"]
+RUN ["ls", "-ltrh", "/code/target/SampleDemo-0.0.1-SNAPSHOT.jar"]
 
 EXPOSE 8080
 
-ENTRYPOINT [ "java", "-jar", "/code/target/myspringboot.jar" ]
+ENTRYPOINT [ "java", "-jar", "/code/target/SampleDemo-0.0.1-SNAPSHOT.jar" ]
